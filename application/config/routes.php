@@ -50,8 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['news/(:any)'] = 'news/view/$1'; //le misy slug
+        //url/(:variable) = //controller/method/$argument ra misy
 $route['default_controller'] = 'news';
-$route['(:any)'] = 'pages/view/$1';
+$route['(:any)'] = 'pages/view/$1'; //Tsy mety fa lasa ze soratana de makao am essai
 $route['test/(:any)'] = 'rewriteurl/view/$1/$2';
 $route['(:any)'] = 'rewriteurl/view';
 
