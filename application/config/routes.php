@@ -54,6 +54,7 @@ $route['default_controller'] = 'news';
 $route['(:any)'] = 'pages/view/$1';
 $route['test/(:any)'] = 'rewriteurl/view/$1/$2';
 $route['(:any)'] = 'rewriteurl/view';
+
 //$route['default_controller'] = 'pages/view';
 
 
