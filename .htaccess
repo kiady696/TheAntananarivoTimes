@@ -1,0 +1,3 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^index\.html$ index.php/rewriteurl/view/1/2 [L]
