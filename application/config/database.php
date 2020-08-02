@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql-kiadyad.alwaysdata.net',
-	'username' => 'kiadyad',
-	'password' => 'Skrillex218',
-	'database' => 'kiadyad_antananarivo_times',
+	'hostname' => 'localhost', 
+	'username' => 'root',
+	'password' => 'root',
+	'database' => 'news',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
