@@ -53,8 +53,8 @@ $route['news/(:any)'] = 'news/view/$1'; //le misy slug
         //url/(:variable) = //controller/method/$argument ra misy
 $route['default_controller'] = 'news';
 $route['(:any)'] = 'pages/view/$1'; //Tsy mety fa lasa ze soratana de makao am essai
-$route['test/(:any)'] = 'rewriteurl/view/$1/$2';
-$route['(:any)'] = 'rewriteurl/view';
+$route['test/(.+)'] = 'rewriteurl/view/$1';
+$route['rewrite/(:any)'] = 'rewriteurl/view';
 
 //$route['default_controller'] = 'pages/view';
 

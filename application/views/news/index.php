@@ -6,6 +6,6 @@
         <div class="main">
                 <?php echo $news_item['text']; ?>
         </div>
-        <p><a href="<?php echo site_url('news/'.$news_item['slug']); ?>"><?php echo $news_item['slug']; ?></a></p>
+        <p><a href="<?php echo base_url('news/'.$news_item['slug']); ?>"><?php echo $news_item['slug']; ?></a></p>
 
 <?php endforeach; ?>
