@@ -8,6 +8,30 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                 $this->load->helper('url_helper');
         }
 
+        public function create()
+{
+    $this->load->helper('form');
+    $this->load->library('form_validation');
+
+    $data['title'] = 'Entrez votre nouvel article';
+
+    $this->form_validation->set_rules('title', 'Title', 'required');
+    $this->form_validation->set_rules('text', 'Text', 'required');
+
+    if ($this->form_validation->run() === FALSE)  //ra misy diso ny inputs
+    {
+        $this->load->view('templates/header', $data);
+        $this->load->view('news/create');
+        $this->load->view('templates/footer');
+
+    }
+    else
+    {
+        $this->news_model->set_news();
+        $this->load->view('news/success');
+    }
+}
+
         public function index()
         {
                 $data['news'] = $this->news_model->get_news();
@@ -38,4 +62,6 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
         $this->load->view('news/view', $data);
         $this->load->view('templates/footer');
         }
+
+        
 }
