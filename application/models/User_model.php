@@ -13,13 +13,26 @@
            if(empty($query->row_array())){ //ra tsisy ninina averiny de mila inscription/insertion user
                 
                 $data['erreur_login'] = 'Tsy mbola inscrit o';
+                $data['title'] = 'Vous n\'êtes pas encore inscrit(e)';
+                $this->load->view('templates/header', $data);
                 $this->load->view('pages/login',$data);
+                $this->load->view('templates/footer');
+
            }else{ //ra tsisy blem
-                $data['user_session'] = $query->row_array()['username'];
+                
+                if(session_name() == NULL){
+                    session_start();
+                }
+                    
+                
+                //$data['pwd_session'] = $query->row_array()['pwd'];
+                $_SESSION['user'] = $query->row_array()['username'];
                 //satria back-office de reto daholo ny news efa anaty base 
                 $query = $this->db->get('news');
-                $data['news_item'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe for(i) :$news_item[i]['title'] ohatra
-                $this->load->view('pages/menuAdmin',$data);
+                $_SESSION['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe for(i) :$news_item[i]['title'] ohatra
+                
+                $this->load->view('pages/menuAdmin');
+                $this->load->view('templates/footer');
            } 
 
         }

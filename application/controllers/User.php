@@ -31,6 +31,14 @@
 
         }
 
+        public function deconnect(){
+            if(isset($_SESSION)){
+                session_destroy();
+            }
+            
+            header('Location:'.base_url(''));
+        }
+
 
 
 
