@@ -1,5 +1,8 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    
     
     //$_SESSION['news'] koa anaty session
     echo 'Bienvenu '.$_SESSION['user'];
