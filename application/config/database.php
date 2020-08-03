@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql-kiadyad.alwaysdata.net', 
+	'hostname' => 'localhost', 
 	'username' => 'kiadyad',
 	'password' => 'Skrillex218',
 	'database' => 'kiadyad_antananarivo_times',
