@@ -30,3 +30,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 user_guide/
 application/config/config.php
 application/config/database.php
+.vscode/launch.json

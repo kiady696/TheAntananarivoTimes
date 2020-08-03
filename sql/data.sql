@@ -11,3 +11,14 @@ INSERT INTO NEWS VALUES (1,'CVO INEFFICACE','Medicament-cvo-curatif-preventif-es
 INSERT INTO NEWS VALUES (2,'CVO TSY LASA MITSY EEH!','Medicament-cvo-tsy-lasa-mitsy','Présenté il y a un mois, ce médicament est nul à chier mais vraiment nul de chez nul');
 
 DELETE FROM NEWS;
+
+CREATE TABLE admins (
+        id int(11) NOT NULL AUTO_INCREMENT,
+        username varchar(10) NOT NULL,
+        pwd varchar(25) NOT NULL,
+        PRIMARY KEY (id)
+);
+
+INSERT INTO admins VALUES (1,'root','root');
+
+RENAME TABLE user TO admins;

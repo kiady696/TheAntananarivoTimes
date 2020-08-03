@@ -28,7 +28,9 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
     else
     {
         $this->news_model->set_news();
-        $this->load->view('news/success');
+        //mandefa message oe succes amna data de miverina ao am this.load.view('pages/menuAdmin',$data)
+        $data['message_success'] = 'Votre ajout a été pris en compte';
+        $this->load->view('pages/menuAdmin',$data);
     }
 }
 
