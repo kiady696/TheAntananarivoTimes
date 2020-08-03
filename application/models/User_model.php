@@ -20,7 +20,7 @@
 
            }else{ //ra tsisy blem
                 
-                if(session_name() == NULL){
+                if(!isset($_SESSION)){
                     session_start();
                 }
                     

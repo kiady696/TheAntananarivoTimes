@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    
     
     //$_SESSION['news'] koa anaty session
     echo 'Bienvenu '.$_SESSION['user'];
