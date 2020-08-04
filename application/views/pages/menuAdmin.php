@@ -10,7 +10,11 @@
     ?> <h2> Les news </h2>
     <?php
         foreach($_SESSION['news'] as $news){
-            echo $news['title'];?></br><?php
+            echo $news['title'];?>
+             
+            <a href="<?php echo base_url('admin/mod/'.$news['slug']); ?>"> Modifier/Supprimer </a>
+
+            </br><?php
 
             //AFFICHER UN BOUTON MODIFIER/SUPPRIMER UN NEWS href="news/mod/$news['slug']"
         }
