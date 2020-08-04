@@ -20,16 +20,14 @@
 
            }else{ //ra tsisy blem
                 
-                if(!isset($_SESSION)){
-                    session_start();
-                }
+                
                     
                 
                 //$data['pwd_session'] = $query->row_array()['pwd'];
                 $_SESSION['user'] = $query->row_array()['username'];
                 //satria back-office de reto daholo ny news efa anaty base 
                 $query = $this->db->get('news');
-                $_SESSION['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe for(i) :$news_item[i]['title'] ohatra
+                $_SESSION['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe foreach $news_item['title'] as news
                 
                 $this->load->view('pages/menuAdmin');
                 $this->load->view('templates/footer');

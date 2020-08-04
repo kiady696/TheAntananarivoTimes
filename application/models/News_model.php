@@ -6,10 +6,32 @@ class News_model extends CI_Model {
                 $this->load->database();
         }
 
+        public function deleteNews($id = FALSE){
+                $this->db->where('id',$id);
+                $this->db->delete('news');
+        }
+
         public function refresh(){
                 
                 $query = $this->db->get('news');
                 return $query->result_array();
+        }
+
+        public function changeNews(){
+                $this->load->helper('url');
+                //$builder = $this->db->table('news');
+                $slug = $this->input->post('slug');
+                $newSlug = $this->enleve_accent(url_title($this->input->post('title'), 'dash', TRUE));
+                $data = [
+                        'title' => $this->input->post('title'),
+                        'slug' => $newSlug,
+                        'text' => $this->input->post('text')
+                ];
+                $this->db->where('slug',$slug);
+                $this->db->update('news',$data);
+                        
+                
+
         }
 
         public function get_news($slug = FALSE)
