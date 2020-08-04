@@ -24,12 +24,13 @@
                     
                 
                 //$data['pwd_session'] = $query->row_array()['pwd'];
+                session_start();
                 $_SESSION['user'] = $query->row_array()['username'];
                 //satria back-office de reto daholo ny news efa anaty base 
                 $query = $this->db->get('news');
-                $_SESSION['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe foreach $news_item['title'] as news
+                $data['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe foreach $news_item['title'] as news
                 
-                $this->load->view('pages/menuAdmin');
+                $this->load->view('pages/menuAdmin',$data);
                 $this->load->view('templates/footer');
            } 
 

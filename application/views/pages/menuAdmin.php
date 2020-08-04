@@ -1,18 +1,21 @@
 <?php
     if(!isset($_SESSION)){
-        session_start();
+        header('Location : '. base_url('admin/login') .'\'');
     }
     
+    echo $_SESSION['user'];
+    
+    $nom = $_SESSION['user'];
     
     //$_SESSION['news'] koa anaty session
-    echo 'Bienvenu '.$_SESSION['user'];
+    echo 'Bienvenu '.$nom;
 
     ?> <h2> Les news </h2>
     <?php
-        foreach($_SESSION['news'] as $news){
-            echo $news['title'];?>
+        foreach($news as $news_item){
+            echo $news_item['title'];?>
              
-            <a href="<?php echo base_url('admin/mod/'.$news['slug']); ?>"> Modifier/Supprimer </a>
+            <a href="<?php echo base_url('admin/mod/'.$news_item['slug']); ?>"> Modifier/Supprimer </a>
 
             </br><?php
 

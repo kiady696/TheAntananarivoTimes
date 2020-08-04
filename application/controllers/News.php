@@ -12,11 +12,10 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
 
                 //basically delete the news concerned by its id then reload menuAdmin view after refreshing it
                 $this->news_model->deleteNews($id); 
-                if(!isset($_SESSION)){
-                        session_start();
-                }
+                
                 $data['message_success'] = 'Votre suppression a été prise en compte';
-                $_SESSION['news'] = $this->news_model->refresh();
+                $data['news'] = $this->news_model->refresh();
+                session_start();
                 $this->load->view('pages/menuAdmin',$data);
 
 
@@ -58,12 +57,11 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                 }else{
                         //Manao update anle news voakasika
                         $this->news_model->changeNews();
-                        //Miverina ao am menuAdmin mila SESSION sy refresh()
-                        if(!isset($_SESSION)){
-                                session_start();
-                        }
+                        //Miverina ao am menuAdmin mila refresh()
+                        
                         $data['message_success'] = 'Votre modification a été prise en compte';
-                        $_SESSION['news'] = $this->news_model->refresh();
+                        $data['news'] = $this->news_model->refresh();
+                        session_start();
                         $this->load->view('pages/menuAdmin',$data);
 
                 }
@@ -92,17 +90,14 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
     }
     else
     {
-        if(!isset($_SESSION)){
-                session_start();
-        }
 
         $this->news_model->set_news();
         //mandefa message oe succes amna data de miverina ao am this.load.view('pages/menuAdmin',$data)
         $data['message_success'] = 'Votre ajout a été pris en compte';
 
         // ANATY News_model ito fonction kely otrany oe mrefresh() apres creation 
-        $_SESSION['news'] = $this->news_model->refresh();    
-
+        $data['news'] = $this->news_model->refresh();    
+        session_start();
         $this->load->view('pages/menuAdmin',$data);
     }
 }
