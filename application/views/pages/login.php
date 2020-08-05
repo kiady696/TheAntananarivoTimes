@@ -1,6 +1,4 @@
 
-
-
 <?php echo form_open('user/login'); ?>
 
     <label for="username">Nom d'Utilisateur</label>

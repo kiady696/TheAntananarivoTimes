@@ -1,11 +1,15 @@
 <?php
-    if(!isset($_SESSION)){
-        header('Location : '. base_url('admin/login') .'\'');
+    if(!isset($_SESSION['username']))
+    {
+        // user is not logged in
+        // re-direct user to login.php
+        redirect('admin/login');
     }
     
-    echo $_SESSION['user'];
     
-    $nom = $_SESSION['user'];
+    echo $_SESSION['username'];
+    
+    $nom = $_SESSION['username'];
     
     //$_SESSION['news'] koa anaty session
     echo 'Bienvenu '.$nom;

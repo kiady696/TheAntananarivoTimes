@@ -20,12 +20,14 @@
 
            }else{ //ra tsisy blem
                 
-                
+            
                     
                 
                 //$data['pwd_session'] = $query->row_array()['pwd'];
-                session_start();
-                $_SESSION['user'] = $query->row_array()['username'];
+                $newdata = array(
+                    "username" =>  $query->row_array()['username']
+                );
+                $this->session->set_userdata($newdata);
                 //satria back-office de reto daholo ny news efa anaty base 
                 $query = $this->db->get('news');
                 $data['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe foreach $news_item['title'] as news

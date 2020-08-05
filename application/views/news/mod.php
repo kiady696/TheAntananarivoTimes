@@ -1,7 +1,4 @@
 <?php   
-    session_start();
-    echo $_SESSION['user']; ?></br>
-    <?php
     echo $news_item['title'].' : '.$news_item['text'].' : '.$news_item['slug']; 
 
 ?></br>

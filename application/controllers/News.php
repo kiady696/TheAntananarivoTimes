@@ -15,7 +15,6 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                 
                 $data['message_success'] = 'Votre suppression a été prise en compte';
                 $data['news'] = $this->news_model->refresh();
-                session_start();
                 $this->load->view('pages/menuAdmin',$data);
 
 
@@ -40,6 +39,7 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
         }
 
         public function change(){
+                
                 $this->load->helper('form');
                 $this->load->library('form_validation');
                 
@@ -61,7 +61,7 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                         
                         $data['message_success'] = 'Votre modification a été prise en compte';
                         $data['news'] = $this->news_model->refresh();
-                        session_start();
+                        
                         $this->load->view('pages/menuAdmin',$data);
 
                 }
@@ -97,7 +97,6 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
 
         // ANATY News_model ito fonction kely otrany oe mrefresh() apres creation 
         $data['news'] = $this->news_model->refresh();    
-        session_start();
         $this->load->view('pages/menuAdmin',$data);
     }
 }

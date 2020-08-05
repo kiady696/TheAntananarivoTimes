@@ -32,12 +32,8 @@
         }
 
         public function deconnect(){
-            
-                session_unset();
-                session_destroy();
-            
-            
-            header('Location:'.base_url(''));
+            session_destroy();
+            redirect('');
         }
 
 
