@@ -113,9 +113,6 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
 
         public function view($slug = NULL)
         {
-            if($slug != NULL){
-                echo 'le slug est :'.$slug;
-            }
                 
                 $data['news_item'] = $this->news_model->get_news($slug);
 
@@ -127,7 +124,7 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
 
         $data['title'] = $data['news_item']['title'];
 
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/headerNews', $data);
         $this->load->view('news/view', $data);
         $this->load->view('templates/footer');
         }
