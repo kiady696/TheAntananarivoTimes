@@ -50,7 +50,7 @@
 
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="<?php echo base_url('img/core-img/logo.png'); ?>" alt=""></a>
+                            <a href="<?php echo base_url('');?>"><img src="<?php echo base_url('img/core-img/logo.png'); ?>" alt=""></a>
                         </div>
 
                         <!-- Navbar Toggler -->
@@ -69,14 +69,14 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="<?php echo base_url('');?>">Home</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="<?php echo base_url('');?>">Home</a></li>
                                             <li><a href="catagories-post.html">Categories</a></li>
                                             <li><a href="single-post.html">Single Articles</a></li>
                                             <li><a href="about.html">About Us</a></li>
-                                            <li><a href="contact.html">Contact</a></li>                                         
+                                            <li><a href="<?php echo base_url('');?>">Contact</a></li>                                         
                                         </ul>
                                     </li>
                                     <li><a href="#">Mega Menu</a>
@@ -91,7 +91,7 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagories</li>
-                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="<?php echo base_url('');?>">Home</a></li>
                                                 <li><a href="catagories-post.html">Catagories</a></li>
                                                 <li><a href="single-post.html">Single Articles</a></li>
                                                 <li><a href="about.html">About Us</a></li>
@@ -99,7 +99,7 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li class="title">Catagories</li>
-                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="<?php echo base_url('');?>">Home</a></li>
                                                 <li><a href="catagories-post.html">Catagories</a></li>
                                                 <li><a href="single-post.html">Single Articles</a></li>
                                                 <li><a href="about.html">About Us</a></li>
@@ -112,7 +112,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="<?php echo base_url('');?>">Contact</a></li>
                                 </ul>
                             </div>
                             <!-- Nav End -->
