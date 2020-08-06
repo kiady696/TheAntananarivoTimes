@@ -31,9 +31,10 @@
                 //satria back-office de reto daholo ny news efa anaty base 
                 $query = $this->db->get('news');
                 $data['news'] = $query->result_array(); //mandefa tableau io , rehefa haka ny news any am adminMenu zany dia oe foreach $news_item['title'] as news
-                
+                $data['title'] = 'Admin Page';
+                $this->load->view('templates/headerBO',$data);
                 $this->load->view('pages/menuAdmin',$data);
-                $this->load->view('templates/footer');
+                
            } 
 
         }

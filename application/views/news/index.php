@@ -4,6 +4,7 @@
         <div class="container">
         <?php foreach ($news as $news_item): ?>
                 <?php $img = mt_rand(1,32) ?>
+                <?php $extrait = $news_item['text'].substr(0,100); ?>
             <div class="row">
 
                             <!-- Single Featured Post -->
@@ -21,7 +22,7 @@
                                             <h6><?php echo $news_item['title']; ?></h6>
                                         </a>
                                         <div class="post-meta">
-                                            <p class="post-excerp" id="extrait"><?php echo $news_item['text'].'...'; ?></p>
+                                            <p class="post-excerp" id="extrait"><?php echo $extrait.'...'; ?></p>
                                             <h6 class="link">Pour lire cet article : <a href="<?php echo base_url('news/'.$news_item['slug']); ?>"><?php echo $news_item['slug']; ?></a></h6>
                                             <!-- Post Like & Post Comment -->
                                             <div class="d-flex align-items-center">

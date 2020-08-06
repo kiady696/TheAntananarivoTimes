@@ -11,7 +11,7 @@
                 <div class="footer-widget-area mt-80">
                     <!-- Footer Logo -->
                     <div class="footer-logo">
-                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="index.html"><img src="<?php echo base_url('img/core-img/logo.png'); ?>" alt=""></a>
                     </div>
                     <!-- List -->
                     <ul class="list">
@@ -113,15 +113,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 <!-- ##### All Javascript Files ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="<?php echo base_url('js/jquery/jquery-2.2.4.min.js'); ?>"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="<?php echo base_url('js/bootstrap/popper.min.js'); ?>"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="<?php echo base_url('js/bootstrap/bootstrap.min.js'); ?>"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="<?php echo base_url('js/plugins/plugins.js'); ?>"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="<?php echo base_url('js/active.js'); ?>"></script>
 </body>
 
 </html>

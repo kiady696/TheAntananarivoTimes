@@ -15,6 +15,7 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                 
                 $data['message_success'] = 'Votre suppression a été prise en compte';
                 $data['news'] = $this->news_model->refresh();
+                $this->load->view('templates/headerBO',$data);
                 $this->load->view('pages/menuAdmin',$data);
 
 
@@ -30,10 +31,12 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                 // WHOOPS 'tsisy anzany news zany hono afaka modifiena ao';
                 show_404();
         }else{
+                $data['title'] = 'Entrez vos modifications à cet article';
                 //$this->load->view('templates/adminHeader'); ///Mbola ho atao template hafa aveeo
                 $this->load->helper('form');
+                $this->load->view('templates/headerBO',$data);
                 $this->load->view('news/mod', $data);
-                $this->load->view('templates/footer');
+                
         }
 
         }
@@ -50,9 +53,9 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                 
                 if ($this->form_validation->run() === FALSE)  //ra misy diso ny inputs
                 {
-                        $this->load->view('templates/header', $data);
+                        $this->load->view('templates/headerBO', $data);
                         $this->load->view('news/mod');
-                        $this->load->view('templates/footer');
+                        
 
                 }else{
                         //Manao update anle news voakasika
@@ -61,7 +64,7 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
                         
                         $data['message_success'] = 'Votre modification a été prise en compte';
                         $data['news'] = $this->news_model->refresh();
-                        
+                        $this->load->view('templates/headerBO',$data);
                         $this->load->view('pages/menuAdmin',$data);
 
                 }
@@ -78,14 +81,14 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
 
     $data['title'] = 'Entrez votre nouvel article';
 
-    $this->form_validation->set_rules('title', 'Title', 'required');
-    $this->form_validation->set_rules('text', 'Text', 'required');
+    $this->form_validation->set_rules('title', 'Title', 'required|min_length[5]|max_length[100]');
+    $this->form_validation->set_rules('text', 'Text', 'required|min_length[10]|max_length[50000]');
 
     if ($this->form_validation->run() === FALSE)  //ra misy diso ny inputs
     {
-        $this->load->view('templates/header', $data);
+        $this->load->view('templates/headerBO', $data);
         $this->load->view('news/create');
-        $this->load->view('templates/footer');
+        
 
     }
     else

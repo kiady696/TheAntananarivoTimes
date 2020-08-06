@@ -18,9 +18,9 @@
             $this->form_validation->set_rules('pwd','Mot de passe','required');
 
             if ($this->form_validation->run() === FALSE){   //ra nisy diso ny napdirna de reload page + error msg
-                $this->load->view('templates/header', $data);
+                $this->load->view('templates/headerBO', $data);
                 $this->load->view('pages/login');
-                $this->load->view('templates/footer');
+    
 
             }else{  // Raha tsy nisy tomika (username required|unique , pwd required)
                 

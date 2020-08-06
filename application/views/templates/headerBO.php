@@ -1,9 +1,16 @@
-<!DOCTYPE html>   
-    <html>   
-    <head>  
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
-    <title> Login Page </title>  
-    <style>   
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title><?php echo $title; ?></title>
+    <style>  
     Body {  
       font-family: Calibri, Helvetica, sans-serif;  
       background-color: #e1eff8;  
@@ -43,33 +50,11 @@
             background-color: lightblue;  
 
         }   
+     #inputText{
+        width: 98%;
+        length: 100px;
+    } 
+        #action{
+            margin-left:1300px;
+        }
     </style>   
-    </head>    
-    <body>    
-        <center> <h1> Admin Login Form </h1> </center>   
-          
-            <div class="container">   
-            <?php echo form_open('user/login'); ?>
-
-                <label for="username">Nom d'Utilisateur</label>
-                <input type="text" name="username" /><br />
-
-                <label for="pwd">Mot de passe</label>
-                <input type="text" name="pwd"/><br />
-
-                <input type="submit" name="submit" value="Se Connecter" />
-
-        
-
-                <?php echo validation_errors(); ?>
-                <h5> <?php if(ISSET($erreur_login)){
-                                echo $erreur_login;
-                            } ?> </h5>  
-            </div>   
-            </form>    
-    </body>     
-    </html>  
-
-
-
-
