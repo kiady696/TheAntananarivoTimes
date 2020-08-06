@@ -99,7 +99,8 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
         $data['message_success'] = 'Votre ajout a été pris en compte';
 
         // ANATY News_model ito fonction kely otrany oe mrefresh() apres creation 
-        $data['news'] = $this->news_model->refresh();    
+        $data['news'] = $this->news_model->refresh(); 
+        $this->load->view('templates/headerBO', $data);   
         $this->load->view('pages/menuAdmin',$data);
     }
 }

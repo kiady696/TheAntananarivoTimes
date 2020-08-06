@@ -52,7 +52,7 @@
         }   
      #inputText{
         width: 98%;
-        length: 100px;
+        length: 2000px;
     } 
         #action{
             margin-left:1300px;
