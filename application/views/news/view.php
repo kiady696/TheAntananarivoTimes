@@ -25,11 +25,13 @@
     $texteArticle = $news_item['text'];
     //echo $texteArticle;
     $temp = $texteArticle; //bola tsy nisy remplacé mitsy
-    foreach($repeated as $rp => $mot){
-        //echo $mot;
-        $temp = str_ireplace($mot,'<strong>'.$mot.'</strong>',$temp);
+    if(isset($repeated)){
+        foreach($repeated as $rp => $mot){
+            //echo $mot;
+            $temp = str_ireplace($mot,'<strong>'.$mot.'</strong>',$temp);
+        }
+        //echo var_dump($temp);
     }
-    //echo var_dump($temp);
 
 
 ?>
