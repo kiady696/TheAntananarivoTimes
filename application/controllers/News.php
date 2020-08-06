@@ -12,7 +12,7 @@ class News extends CI_Controller { //default controller mapiseo ny news rehetra
 
                 //basically delete the news concerned by its id then reload menuAdmin view after refreshing it
                 $this->news_model->deleteNews($id); 
-                
+                $data['title'] = 'Page Admin';
                 $data['message_success'] = 'Votre suppression a été prise en compte';
                 $data['news'] = $this->news_model->refresh();
                 $this->load->view('templates/headerBO',$data);
