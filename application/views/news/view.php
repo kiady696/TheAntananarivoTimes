@@ -28,7 +28,9 @@
     if(isset($repeated)){
         foreach($repeated as $rp => $mot){
             //echo $mot;
-            $temp = str_ireplace($mot,'<strong>'.$mot.'</strong>',$temp);
+            if(strlen($mot)>3){
+                $temp = str_replace($mot,'<strong>'.$mot.'</strong>',$temp);
+            }
         }
         //echo var_dump($temp);
     }
