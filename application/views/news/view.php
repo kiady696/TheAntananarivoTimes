@@ -2,13 +2,13 @@
 <?php 
 
     $articleString = $news_item['title'].' '.$news_item['text'];
-    $words = str_word_count($articleString, 1);
+    $words = str_word_count($articleString, 1,'àáãçéèêîìû43');
     $words = array_count_values($words);
     //look at the number of occurence of repeated word
     
     //$strongs = array(array_keys($words,2) => '<strong>'.array_keys($words,2)[0].'</strong>');
     $strongs = array();
-    foreach($words as $key => $value){
+    foreach($words as $key => $value){                   //ATO NO BOLA MISY TSY METY KELY FA AFAKA ATAO FONCTION MITOKANA MITSY AHITANA AZY 
         if($value>1){
             $repeated = array_keys($words,$value);
             //$strongs[$repeated] = $repeated;
