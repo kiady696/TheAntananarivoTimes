@@ -35,10 +35,6 @@
             
             
         </div>
-        <?php
-    if(ISSET($message_success)){
-        ?><h4> <?php echo $message_success; ?> </h4> <?php
-    }?>
 
 
     </body>
