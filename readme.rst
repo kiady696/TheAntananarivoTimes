@@ -4,16 +4,6 @@ Liens du site
 
 Site Front-Office : https://the-antananarivo-times.herokuapp.com/
 
-Accès Back-Office : https://the-antananarivo-times.herokuapp.com/admin/login
-user : root
-pass : root
-
-###################
-Num ETU 
-###################
-
-ETU000823
-
 
 ###################
 What is The Antananarivo Times
